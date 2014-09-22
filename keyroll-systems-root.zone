@@ -1,0 +1,26 @@
+; A fake root zone for RFC5011 testing.
+; 
+; This fake root zone file exists purely for testing RFC5011 implmentations. 
+; Trying to use this to actually resolve names simply won't work (unless you 
+; get your jollies by only looking up 4 TXT records!)
+
+$TTL 900	; We make the TTL be 15 minutes - this way we will get >1 request during the 1h keyroll time.
+
+.			SOA	mname.invalid. ns.invalid. (
+				42         ; serial
+				3600       ; refresh (1 hour)
+				3600       ; retry (1 hour)
+				1814400    ; expire (3 weeks)
+				3600       ; minimum (1 hour)
+				)
+
+			NS	ns.root.
+ns.root.		A	204.42.252.20
+
+invalid.		NS	ns.invalid.
+ns.invalid.		A	204.42.252.20
+
+example.		NS	ns.example.
+ns.example.		A	204.42.252.20
+
+.			TXT	"This is the example root zone"
