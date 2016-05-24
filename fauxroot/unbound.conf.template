@@ -1,0 +1,17 @@
+# unbound.conf
+
+server:
+	verbosity: 1
+
+	port: 5300
+
+	logfile: ""
+	username: ""
+	chroot: ""
+
+	root-hints: "__PATHNAME__/fauxroot.hints"
+	auto-trust-anchor-file: "__PATHNAME__/fauxroot.key"
+	
+	add-holddown: __HOLDDOWN__
+	del-holddown: __HOLDDOWN__
+	keep-missing: 2196
