@@ -1,0 +1,35 @@
+// named.conf
+
+options {
+	directory "__PATHNAME__";
+
+	dump-file "cache_dump.db";
+	statistics-file "named_stats.txt";
+	memstatistics-file "named.memstats";
+
+	zone-statistics yes;
+
+	recursion yes;
+
+	dnssec-enable yes;
+	dnssec-validation yes;
+
+	auth-nxdomain no;
+	listen-on port 5301 { 127.0.0.1; };
+};
+
+include "keys.conf";
+
+view "recursive" IN {
+	match-clients { any; };
+	allow-query   { any; };
+	recursion yes;
+
+	allow-recursion { any; };
+
+	// prime the server with the RFC5011 Key roll server.
+	zone "." {
+		type hint;
+		file "fauxroot.hints";
+	};
+};
