@@ -1,6 +1,6 @@
 # Key Roller Demo
 
-- https://icksk.dnssek.info/fauxroot.html
+RFC5011 KSK roll with new KSK every 90 seconds using https://icksk.dnssek.info/fauxroot.html.
 
 ## Setup
 
