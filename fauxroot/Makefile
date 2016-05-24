@@ -5,7 +5,7 @@ HOLDDOWN=	175
 
 all:
 
-bootstrap: $(CONFIG)
+install: $(CONFIG)
 	
 fauxroot.hints:
 	curl -o $@ $(BASE)/root.hints
@@ -19,7 +19,7 @@ unbound.conf: unbound.conf.template
 		-e "s,__HOLDDOWN__,$(HOLDDOWN)," \
 		< $< > $@
 	
-test: $(CONFIG)
+test-unbound: $(CONFIG)
 	unbound -dv -c ./unbound.conf
 
 clean:
