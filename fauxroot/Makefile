@@ -35,5 +35,8 @@ test-unbound: $(CONFIG)
 test-named: $(CONFIG)
 	named -g -c named.conf -T mkeytimers=1/6/180
 
+test-knot: $(CONFIG)
+	kresd --verbose --config knot.conf
+
 clean:
 	rm -f $(CONFIG) *.mkeys *.jnl

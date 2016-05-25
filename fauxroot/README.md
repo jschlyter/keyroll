@@ -17,3 +17,9 @@ RFC5011 KSK roll with new KSK every 90 seconds using https://icksk.dnssek.info/f
 **Note:** Unbound will listen on port 5302
 
     make test-unbound
+
+## Testing with Knot Resolver
+
+**Note:** Knot Resolver will listen on port 5303
+
+    make test-knot
