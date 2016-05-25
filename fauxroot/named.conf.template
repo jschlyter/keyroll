@@ -18,7 +18,7 @@ options {
 	listen-on port 5301 { 127.0.0.1; };
 };
 
-include "keys.conf";
+include "fauxroot.mkeys";
 
 view "recursive" IN {
 	match-clients { any; };

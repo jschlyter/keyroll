@@ -1,5 +1,6 @@
 
-CONFIG=		fauxroot.hints fauxroot.key unbound.conf named.conf
+CONFIG=		fauxroot.hints fauxroot.key fauxroot.mkeys \
+		unbound.conf named.conf
 BASE=		https://icksk.dnssek.info
 HOLDDOWN=	175
 
